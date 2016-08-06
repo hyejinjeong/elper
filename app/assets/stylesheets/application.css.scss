@@ -10,3 +10,9 @@ $navbar-default-link-hover-bg: black;
 @import 'bootstrap';
 
 body { margin-top: 60px; }
+
+
+th,td{
+	padding: 15px;
+    text-align: center;
+}

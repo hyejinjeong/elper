@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  user_id: 
+  start_date: 2016-08-04
+  period: 1
+  start_time: 2016-08-04 20:25:31
+  end_time: 2016-08-04 20:25:31
+
+two:
+  title: MyString
+  user_id: 
+  start_date: 2016-08-04
+  period: 1
+  start_time: 2016-08-04 20:25:31
+  end_time: 2016-08-04 20:25:31
