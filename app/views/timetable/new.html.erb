@@ -1,47 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function myfunction(id)
+{
+	j = id%10; i = id - j; i = i/10;
+
+	if(document.getElementById('myTable').rows[i].cells[j].style.backgroundColor == "Blue")
+	document.getElementById('myTable').rows[i].cells[j].style.backgroundColor = "Red"
+	else
+	document.getElementById('myTable').rows[i].cells[j].style.backgroundColor = "Blue";
+	end
+}
+
+</script>
+</head>
+
+<body>
 <h1>New Timetable</h1>
 
-
 <div class="content">
-<table border="1" width="600" height="500">
+<table id="myTable" border="1" width="600" height="500">
 	<tr>
-		<th width="70"></th>
-		<th>월</th>
-		<th>화</th>
-		<th>수</th>
-		<th>목</th>
-		<th>금</th>
-		<th>토</th>
-		<th>일</th>
+		<td width="70"></td>
+		<td>월</td>
+		<td>화</td>
+		<td>수</td>
+		<td>목</td>
+		<td>금</td>
+		<td>토</td>
+		<td>일</td>
 	</tr>
 	<tr>
-		<th>8시</th>
+		<td >10시</td>
+		<td id = "11" onclick="myfunction(this.id)"></td>
+		<td id = "12" onclick="myfunction(this.id)"></td>
+		<td id = "13" onclick="myfunction(this.id)"></td>
+		<td id = "14" onclick="myfunction(this.id)"></td>
+		<td id = "15" onclick="myfunction(this.id)"></td>
+		<td id = "16" onclick="myfunction(this.id)"></td>
+		<td id = "17" onclick="myfunction(this.id)"></td>
 	</tr>
 	<tr>
-		<th>9시</th>
+		<td>11시</td>
+		<td id = "21" onclick="myfunction(this.id)"></td>
+		<td id = "22" onclick="myfunction(this.id)"></td>
+		<td id = "23" onclick="myfunction(this.id)"></td>
+		<td id = "24" onclick="myfunction(this.id)"></td>
+		<td id = "25" onclick="myfunction(this.id)"></td>
+		<td id = "26" onclick="myfunction(this.id)"></td>
+		<td id = "27" onclick="myfunction(this.id)"></td>
 	</tr>
 	<tr>
-		<th>10시</th>
+		<td>12시</td>
+		<td id = "31" onclick="myfunction(this.id)"></td>
+		<td id = "32" onclick="myfunction(this.id)"></td>
+		<td id = "33" onclick="myfunction(this.id)"></td>
+		<td id = "34" onclick="myfunction(this.id)"></td>
+		<td id = "35" onclick="myfunction(this.id)"></td>
+		<td id = "36" onclick="myfunction(this.id)"></td>
+		<td id = "37" onclick="myfunction(this.id)"></td>
 	</tr>
 	<tr>
-		<th>11시</th>
+		<td>13시</td>
+		<td id = "41" onclick="myfunction(this.id)"></td>
+		<td id = "42" onclick="myfunction(this.id)"></td>
+		<td id = "43" onclick="myfunction(this.id)"></td>
+		<td id = "44" onclick="myfunction(this.id)"></td>
+		<td id = "45" onclick="myfunction(this.id)"></td>
+		<td id = "46" onclick="myfunction(this.id)"></td>
+		<td id = "47" onclick="myfunction(this.id)"></td>
 	</tr>
 	<tr>
-		<th>12시</th>
+		<td>14시</td>
+		<td id = "51" onclick="myfunction(this.id)"></td>
+		<td id = "52" onclick="myfunction(this.id)"></td>
+		<td id = "53" onclick="myfunction(this.id)"></td>
+		<td id = "54" onclick="myfunction(this.id)"></td>
+		<td id = "55" onclick="myfunction(this.id)"></td>
+		<td id = "56" onclick="myfunction(this.id)"></td>
+		<td id = "57" onclick="myfunction(this.id)"></td>
 	</tr>
 	<tr>
-		<th>13시</th>
+		<td>15시</td>
+		<td id = "61" onclick="myfunction(this.id)"></td>
+		<td id = "62" onclick="myfunction(this.id)"></td>
+		<td id = "63" onclick="myfunction(this.id)"></td>
+		<td id = "64" onclick="myfunction(this.id)"></td>
+		<td id = "65" onclick="myfunction(this.id)"></td>
+		<td id = "66" onclick="myfunction(this.id)"></td>
+		<td id = "67" onclick="myfunction(this.id)"></td>
 	</tr>
 	<tr>
-		<th>14시</th>
+		<td>16시</td>
+		<td id = "71" onclick="myfunction(this.id)"></td>
+		<td id = "72" onclick="myfunction(this.id)"></td>
+		<td id = "73" onclick="myfunction(this.id)"></td>
+		<td id = "74" onclick="myfunction(this.id)"></td>
+		<td id = "75" onclick="myfunction(this.id)"></td>
+		<td id = "76" onclick="myfunction(this.id)"></td>
+		<td id = "77" onclick="myfunction(this.id)"></td>
 	</tr>
 	<tr>
-		<th>15시</th>
+		<td>17시</td>
+		<td id = "81" onclick="myfunction(this.id)"></td>
+		<td id = "82" onclick="myfunction(this.id)"></td>
+		<td id = "83" onclick="myfunction(this.id)"></td>
+		<td id = "84" onclick="myfunction(this.id)"></td>
+		<td id = "85" onclick="myfunction(this.id)"></td>
+		<td id = "86" onclick="myfunction(this.id)"></td>
+		<td id = "87" onclick="myfunction(this.id)"></td>
 	</tr>
 	<tr>
-		<th>16시</th>
+		<td>18시</td>
+		<td id = "91" onclick="myfunction(this.id)"></td>
+		<td id = "92" onclick="myfunction(this.id)"></td>
+		<td id = "93" onclick="myfunction(this.id)"></td>
+		<td id = "94" onclick="myfunction(this.id)"></td>
+		<td id = "95" onclick="myfunction(this.id)"></td>
+		<td id = "96" onclick="myfunction(this.id)"></td>
+		<td id = "97" onclick="myfunction(this.id)"></td>
 	</tr>
 	<tr>
-		<th>17시</th>
+		<td>19시</td>
+		<td id = "101" onclick="myfunction(this.id)"></td>
+		<td id = "102" onclick="myfunction(this.id)"></td>
+		<td id = "103" onclick="myfunction(this.id)"></td>
+		<td id = "104" onclick="myfunction(this.id)"></td>
+		<td id = "105" onclick="myfunction(this.id)"></td>
+		<td id = "106" onclick="myfunction(this.id)"></td>
+		<td id = "107" onclick="myfunction(this.id)"></td>
 	</tr>
 </table>
 </div>
+</body>
