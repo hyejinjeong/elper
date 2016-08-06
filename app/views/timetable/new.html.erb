@@ -4,13 +4,13 @@
 <script type="text/javascript">
 function myfunction(id)
 {
+	
 	j = id%10; i = id - j; i = i/10;
 
-	if(document.getElementById('myTable').rows[i].cells[j].style.backgroundColor == "Blue")
-	document.getElementById('myTable').rows[i].cells[j].style.backgroundColor = "Red"
+	if(document.getElementById('myTable').rows[i].cells[j].style.backgroundColor == "rgb(78, 179, 211)")
+		document.getElementById('myTable').rows[i].cells[j].style.backgroundColor = "rgb(255, 255, 255)";
 	else
-	document.getElementById('myTable').rows[i].cells[j].style.backgroundColor = "Blue";
-	end
+		document.getElementById('myTable').rows[i].cells[j].style.backgroundColor = "rgb(78, 179, 211)";
 }
 
 </script>
