@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-<script type="text/javascript">
-function myfunction(id)
-{
-	
-	j = id%10; i = id - j; i = i/10;
+<% @include_manage_slots_js = true %>
+<%= @time_slots.count %>
 
-	if(document.getElementById('myTable').rows[i].cells[j].style.backgroundColor == "rgb(78, 179, 211)")
-		document.getElementById('myTable').rows[i].cells[j].style.backgroundColor = "rgb(255, 255, 255)";
-	else
-		document.getElementById('myTable').rows[i].cells[j].style.backgroundColor = "rgb(78, 179, 211)";
-}
-
-</script>
-</head>
-
-<body>
 <h1>New Timetable</h1>
 <h3>가능한 시간을 모두 선택해 주세요.</h3>
 
@@ -24,119 +8,23 @@ function myfunction(id)
 <table class="table table-bordered" id="myTable" border="1" width="600" height="500">
 	<tr>
 		<td width="70"></td>
-		<td>월</td>
-		<td>화</td>
-		<td>수</td>
-		<td>목</td>
-		<td>금</td>
-		<td>토</td>
-		<td>일</td>
+		<% TimeSlot.wdays.keys.each do |wday| %>
+			<td><%= wday %></td>
+		<% end %>
 	</tr>
-	<tr>
-		<td >10시</td>
-		<td id = "11" onclick="myfunction(this.id)"></td>
-		<td id = "12" onclick="myfunction(this.id)"></td>
-		<td id = "13" onclick="myfunction(this.id)"></td>
-		<td id = "14" onclick="myfunction(this.id)"></td>
-		<td id = "15" onclick="myfunction(this.id)"></td>
-		<td id = "16" onclick="myfunction(this.id)"></td>
-		<td id = "17" onclick="myfunction(this.id)"></td>
-	</tr>
-	<tr>
-		<td>11시</td>
-		<td id = "21" onclick="myfunction(this.id)"></td>
-		<td id = "22" onclick="myfunction(this.id)"></td>
-		<td id = "23" onclick="myfunction(this.id)"></td>
-		<td id = "24" onclick="myfunction(this.id)"></td>
-		<td id = "25" onclick="myfunction(this.id)"></td>
-		<td id = "26" onclick="myfunction(this.id)"></td>
-		<td id = "27" onclick="myfunction(this.id)"></td>
-	</tr>
-	<tr>
-		<td>12시</td>
-		<td id = "31" onclick="myfunction(this.id)"></td>
-		<td id = "32" onclick="myfunction(this.id)"></td>
-		<td id = "33" onclick="myfunction(this.id)"></td>
-		<td id = "34" onclick="myfunction(this.id)"></td>
-		<td id = "35" onclick="myfunction(this.id)"></td>
-		<td id = "36" onclick="myfunction(this.id)"></td>
-		<td id = "37" onclick="myfunction(this.id)"></td>
-	</tr>
-	<tr>
-		<td>13시</td>
-		<td id = "41" onclick="myfunction(this.id)"></td>
-		<td id = "42" onclick="myfunction(this.id)"></td>
-		<td id = "43" onclick="myfunction(this.id)"></td>
-		<td id = "44" onclick="myfunction(this.id)"></td>
-		<td id = "45" onclick="myfunction(this.id)"></td>
-		<td id = "46" onclick="myfunction(this.id)"></td>
-		<td id = "47" onclick="myfunction(this.id)"></td>
-	</tr>
-	<tr>
-		<td>14시</td>
-		<td id = "51" onclick="myfunction(this.id)"></td>
-		<td id = "52" onclick="myfunction(this.id)"></td>
-		<td id = "53" onclick="myfunction(this.id)"></td>
-		<td id = "54" onclick="myfunction(this.id)"></td>
-		<td id = "55" onclick="myfunction(this.id)"></td>
-		<td id = "56" onclick="myfunction(this.id)"></td>
-		<td id = "57" onclick="myfunction(this.id)"></td>
-	</tr>
-	<tr>
-		<td>15시</td>
-		<td id = "61" onclick="myfunction(this.id)"></td>
-		<td id = "62" onclick="myfunction(this.id)"></td>
-		<td id = "63" onclick="myfunction(this.id)"></td>
-		<td id = "64" onclick="myfunction(this.id)"></td>
-		<td id = "65" onclick="myfunction(this.id)"></td>
-		<td id = "66" onclick="myfunction(this.id)"></td>
-		<td id = "67" onclick="myfunction(this.id)"></td>
-	</tr>
-	<tr>
-		<td>16시</td>
-		<td id = "71" onclick="myfunction(this.id)"></td>
-		<td id = "72" onclick="myfunction(this.id)"></td>
-		<td id = "73" onclick="myfunction(this.id)"></td>
-		<td id = "74" onclick="myfunction(this.id)"></td>
-		<td id = "75" onclick="myfunction(this.id)"></td>
-		<td id = "76" onclick="myfunction(this.id)"></td>
-		<td id = "77" onclick="myfunction(this.id)"></td>
-	</tr>
-	<tr>
-		<td>17시</td>
-		<td id = "81" onclick="myfunction(this.id)"></td>
-		<td id = "82" onclick="myfunction(this.id)"></td>
-		<td id = "83" onclick="myfunction(this.id)"></td>
-		<td id = "84" onclick="myfunction(this.id)"></td>
-		<td id = "85" onclick="myfunction(this.id)"></td>
-		<td id = "86" onclick="myfunction(this.id)"></td>
-		<td id = "87" onclick="myfunction(this.id)"></td>
-	</tr>
-	<tr>
-		<td>18시</td>
-		<td id = "91" onclick="myfunction(this.id)"></td>
-		<td id = "92" onclick="myfunction(this.id)"></td>
-		<td id = "93" onclick="myfunction(this.id)"></td>
-		<td id = "94" onclick="myfunction(this.id)"></td>
-		<td id = "95" onclick="myfunction(this.id)"></td>
-		<td id = "96" onclick="myfunction(this.id)"></td>
-		<td id = "97" onclick="myfunction(this.id)"></td>
-	</tr>
-	<tr>
-		<td>19시</td>
-		<td id = "101" onclick="myfunction(this.id)"></td>
-		<td id = "102" onclick="myfunction(this.id)"></td>
-		<td id = "103" onclick="myfunction(this.id)"></td>
-		<td id = "104" onclick="myfunction(this.id)"></td>
-		<td id = "105" onclick="myfunction(this.id)"></td>
-		<td id = "106" onclick="myfunction(this.id)"></td>
-		<td id = "107" onclick="myfunction(this.id)"></td>
-	</tr>
+	<% (10..21).each do |hour| %>
+		<% hour_code = hour * 100 %>
+		<tr>
+			<td><%= "#{hour}시" %></td>
+			<% TimeSlot.wdays.keys.each do |wday| %>
+				<%= content_tag :td, "", class: "time-slot-button", data: { wday: wday, hour: hour, between: @time_slots.by_wday(wday).between(hour_code, hour_code + 100).present? } %>
+			<% end %>
+		</tr>
+	<% end %>
 </table>
 </div>
 
-<div style ="position: fixed; bottom: 10px, right: 10px">
-<button type="button" class="btn btn-primary btn-lg">Submit</button>
-</div>
-
-</body>
+<%= form_tag manage_slots_path, id: "form-manage-time-slot" do |f| %>
+	<%= hidden_field_tag :slots_data, "", id: "form-manage-time-slot-slots-data" %>
+	<%= content_tag :div, "저장하기", id: "form-manage-time-slot-button" %>
+<% end %>
