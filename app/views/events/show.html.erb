@@ -1,0 +1,19 @@
+<div class='post'>	
+	<div class="title">
+		<h3>Title:
+		<%= @event.title %></h3>
+	</div>
+
+	<div class="start_date">
+		<h4>start_date:
+		<%= @event.start_date %></h4>
+	</div>
+
+	<div class="period">
+		<h4>period:
+		<%= @event.period %></h4>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-default' %>
+<%= link_to 'Back', events_path, class: 'btn btn-default' %>

@@ -15,6 +15,10 @@
 				<td class="col-md-2 col-xs-4"><%= event.title %></td>
 				<td class="col-md-5 col-xs-4"><%= event.start_date %></td>
 				<td class="col-md-5 col-xs-4"><%= event.period %></td>
+				<td>
+					<%= link_to 'edit', edit_event_path(event) %></td>
+				<td>
+					<%= link_to 'show', event_path(event) %></td>
 			</tr>
 		<% end %>
 	</tbody>
