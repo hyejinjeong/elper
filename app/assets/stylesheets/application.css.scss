@@ -8,6 +8,7 @@ $navbar-default-link-hover-bg: black;
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'events';
 
 body { margin-top: 60px; }
 
@@ -16,4 +17,3 @@ th,td{
 	padding: 15px;
     text-align: center;
 }
-

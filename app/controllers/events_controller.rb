@@ -20,6 +20,7 @@ class EventsController < ApplicationController
 
 	def show
 		@event = Event.find(params[:id])
+		@time_slots = current_user.time_slots
 	end
 
 	def index
@@ -28,6 +29,7 @@ class EventsController < ApplicationController
 	end
 
 	def edit
+		@time_slots = current_user.time_slots
 		@event = Event.find(params[:id])
 	end
 
@@ -39,6 +41,13 @@ class EventsController < ApplicationController
 		else
 			render 'edit'
 		end
+	end
+
+	def destroy
+		@event = Event.find(params[:id])
+		@event.destroy
+
+		redirect_to events_path
 	end
 
 	private

@@ -1,27 +1,21 @@
 <h1>Your events</h1>
 
-<table>
-	<thead>
-		<tr>
-			<th>Title</th>
-			<th>start_date</th>
-			<th>period</th>
-		</tr>
-	</thead>
-
-	<tbody>
-		<% @events.each do |event| %>
-			<tr>
-				<td class="col-md-2 col-xs-4"><%= event.title %></td>
-				<td class="col-md-5 col-xs-4"><%= event.start_date %></td>
-				<td class="col-md-5 col-xs-4"><%= event.period %></td>
-				<td>
-					<%= link_to 'edit', edit_event_path(event) %></td>
-				<td>
-					<%= link_to 'show', event_path(event) %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
+<div class="row">
+  <% @events.each do |event| %>
+	 <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <div class="caption">
+		        <h3><%= event.title%></h3>
+		        <p>start_date: <%= event.start_date %></p>
+		        <p>at least <%= event.period %>month</p>
+		        <p><%= link_to 'show', event_path(event), class: "btn btn-primary" %>
+		        <%= link_to 'edit', edit_event_path(event), class: "btn btn-warning" %>
+		        	<%= link_to 'delete', event_path(event), class: "btn btn-danger", method: :delete, data: {confirm: 'Are you sure?' } %>
+		        </p>
+			</div>
+	    </div>
+	</div>
+  <% end %>    
+</div>
 
 <%= link_to 'New event', new_event_path, class: "btn btn-default" %>
