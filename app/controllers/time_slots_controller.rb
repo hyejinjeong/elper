@@ -16,6 +16,6 @@ class TimeSlotsController < ApplicationController
 			end
 		end
 		
-		redirect_to new_timetable_path
+		redirect_to new_event_path
 	end
 end

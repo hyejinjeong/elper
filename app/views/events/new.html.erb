@@ -1,8 +1,8 @@
 <% @include_manage_slots_js = true %>
-<%= @time_slots.count %>
 
-<h1>New Timetable</h1>
-<h3>가능한 시간을 모두 선택해 주세요.</h3>
+<%= render 'form' %>
+
+<h4> 가능한 시간을 모두 선택해 주세요. </h4>
 
 <div class="content">
 <table class="table table-bordered" id="myTable" border="1" width="600" height="500">

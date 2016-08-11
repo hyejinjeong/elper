@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
+  resources :events
   resources :posts
   resources :timetable
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

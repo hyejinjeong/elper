@@ -13,10 +13,10 @@ updateData = ->
 			end_hour_and_min = start_hour_and_min + 100
 			
 			dataString = '{' + 
-												'"wday":"' + wday + '",' + 
-												'"start_hour_and_min":"' + start_hour_and_min + '",' + 
-												'"end_hour_and_min":"' + end_hour_and_min + '"' + 
-												'},'
+							'"wday":"' + wday + '",' + 
+							'"start_hour_and_min":"' + start_hour_and_min + '",' + 
+							'"end_hour_and_min":"' + end_hour_and_min + '"' + 
+							'},'
 			data += dataString
 	
 	$('#form-manage-time-slot-slots-data').val(data.substring(0,data.length-1) + "]")

@@ -1,0 +1,16 @@
+<%= form_for @event do |f| %>
+	<div>	
+		<h1><%= f.label :title %>
+		<%= f.text_field :title %></h1>
+	</div>
+	<div>
+		<h4><%= f.label :start_date %>
+		<%= f.date_field :start_date %></h4>
+	</div>
+	<div>
+		<h4><%= f.label :period %>(month)
+		<%= f.number_field :period %></h4>
+	</div>
+
+	<%= f.submit %>
+<% end %>
