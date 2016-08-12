@@ -3,14 +3,16 @@
 <div class="row">
   <% @events.each do |event| %>
 	 <div class="col-sm-6 col-md-4">
-	    <div class="thumbnail">
-	      <div class="caption">
-		        <h3><%= event.title%></h3>
+	    <div class="panel panel-info">
+		     <div class="panel-heading">   
+		        <h3><%= event.title%></h3></div>
+			<div class="panel-body">
 		        <p>start_date: <%= event.start_date %></p>
 		        <p>at least <%= event.period %>month</p>
-		        <p><%= link_to 'show', event_path(event), class: "btn btn-primary" %>
-		        <%= link_to 'edit', edit_event_path(event), class: "btn btn-warning" %>
-		        	<%= link_to 'delete', event_path(event), class: "btn btn-danger", method: :delete, data: {confirm: 'Are you sure?' } %>
+		        <p>
+			        <%= link_to 'show', event_path(event), class: "btn btn-primary" %>
+			        <%= link_to 'edit', edit_event_path(event), class: "btn btn-warning" %>
+			        	<%= link_to 'delete', event_path(event), class: "btn btn-danger", method: :delete, data: {confirm: 'Are you sure?' } %>
 		        </p>
 			</div>
 	    </div>
