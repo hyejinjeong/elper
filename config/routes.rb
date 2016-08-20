@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :events
+  resources :events do
+    resources :participations
+  end
   resources :posts
   resources :timetable
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  post 'manage_slots' => 'time_slots#manage_slots'
+  resources :users, only: :show do
+    member do
+      get 'time_slots'
+      post 'manage_slots'
+    end
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

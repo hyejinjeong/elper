@@ -1,0 +1,20 @@
+<div class="content">
+	<table class="table table-bordered" id="myTable" border="1" width="600" height="500">
+		<tr>
+			<td width="70"></td>
+			<% TimeSlot.wdays.keys.each do |wday| %>
+				<td><%= wday %></td>
+			<% end %>
+		</tr>
+		<% (10..21).each do |hour| %>
+			<% hour_code = hour * 100 %>
+			<tr>
+				<td><%= "#{hour}시" %></td>
+				<% TimeSlot.wdays.keys.each do |wday| %>
+					<% between = time_slots.by_wday(wday).between(hour_code, hour_code + 100).present? %> 
+					<%= content_tag :td, "", class: "time-slot-button", data: { wday: wday, hour: hour, between: between }, style: "#{"background: rgb(78, 179, 211);" if between}" %>
+				<% end %>
+			</tr>
+		<% end %>
+	</table>
+</div>

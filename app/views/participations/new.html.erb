@@ -1,0 +1,8 @@
+<%= form_for @participation, url: {action: "create"} do |f| %>
+	<%= f.label :status %><br />
+	<%= f.radio_button :status, 'attendance' %>attendance
+	<%= f.radio_button :status, 'uncertain' %>uncertain
+	<%= f.radio_button :status, 'absence' %>absence
+
+	<%= f.submit %>
+<% end %>

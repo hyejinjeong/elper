@@ -30,6 +30,6 @@ $('#form-manage-time-slot-button').click ->
 	updateData()
 	$('#form-manage-time-slot').submit()
 
-$(document).ready ->
-	$('.time-slot-button').each ->
-		changeColor($(this))
+# $ ->
+# 	$('.time-slot-button').each ->
+# 		changeColor($(this))

@@ -9,9 +9,12 @@ $navbar-default-link-hover-bg: black;
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'events';
+@import 'welcome';
 
-body { margin-top: 60px; }
-
+img{
+	max-width: 100%;
+	vertical-align: middle;
+}
 
 th,td{
 	padding: 15px;

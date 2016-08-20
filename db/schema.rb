@@ -11,20 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809043929) do
+ActiveRecord::Schema.define(version: 20160820131844) do
 
   create_table "events", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "user_id"
-    t.date     "start_date"
-    t.integer  "period"
+    t.string   "title",      null: false
+    t.date     "start_date", null: false
+    t.integer  "period",     null: false
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "mentor_id"
+    t.integer  "mentee_id"
   end
 
-  add_index "events", ["user_id"], name: "index_events_on_user_id"
+  add_index "events", ["mentee_id"], name: "index_events_on_mentee_id"
+  add_index "events", ["mentor_id"], name: "index_events_on_mentor_id"
+
+  create_table "participations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "participations", ["event_id"], name: "index_participations_on_event_id"
+  add_index "participations", ["user_id"], name: "index_participations_on_user_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -64,6 +77,7 @@ ActiveRecord::Schema.define(version: 20160809043929) do
     t.string   "provider"
     t.string   "uid"
     t.string   "image"
+    t.integer  "category",               default: 1
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

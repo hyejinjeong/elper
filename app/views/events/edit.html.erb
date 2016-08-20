@@ -1,34 +1,8 @@
-<% @include_manage_slots_js = true %>
-
-<h1>Edit events</h1>
-
-<%= render 'form' %>
-
-<h4> 가능한 시간을 모두 선택해 주세요. </h4>
-
-<div class="content">
-<table class="table table-bordered" id="myTable" border="1" width="600" height="500">
-	<tr>
-		<td width="70"></td>
-		<% TimeSlot.wdays.keys.each do |wday| %>
-			<td><%= wday %></td>
-		<% end %>
-	</tr>
-	<% (10..21).each do |hour| %>
-		<% hour_code = hour * 100 %>
-		<tr>
-			<td><%= "#{hour}시" %></td>
-			<% TimeSlot.wdays.keys.each do |wday| %>
-				<%= content_tag :td, "", class: "time-slot-button", data: { wday: wday, hour: hour, between: @time_slots.by_wday(wday).between(hour_code, hour_code + 100).present? } %>
-			<% end %>
-		</tr>
-	<% end %>
-</table>
-</div>
-
-<%= form_tag manage_slots_path, id: "form-manage-time-slot" do |f| %>
-	<%= hidden_field_tag :slots_data, "", id: "form-manage-time-slot-slots-data" %>
-	<%= content_tag :div, "저장하기", id: "form-manage-time-slot-button" %>
+<% if current_user.manager %>
+	<h1>Edit events</h1>
+	<%= render 'form' %>
+<% elsif current_user.mentor? %>
+	<%= render 'select_time' %>
 <% end %>
 
 <%= link_to 'Back', events_path %>

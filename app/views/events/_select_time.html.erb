@@ -1,0 +1,17 @@
+<h1>Select time</h1>
+
+<%= render 'time_slots/table', time_slots: @event.mentee.time_slots %>
+ 
+<%= form_for @event do |f| %>
+	<div>
+		<%= f.label :start_time %>
+		<%= f.datetime_select :start_time, :ampm  => true, :minute_step => 30 %>
+	</div>
+
+	<div>
+		<%= f.label :end_time %>
+		<%= f.datetime_select :end_time, :ampm => true, :minute_step => 30 %>
+	</div>
+
+	<%= f.submit %>
+<% end %>

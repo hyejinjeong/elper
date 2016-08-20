@@ -1,0 +1,7 @@
+<h1>Your events</h1>
+
+<div class="row">
+	<% @participations.each do |participation| %>
+	     <h3><%= participation.status%></h3>
+ 	<% end %>
+</div>

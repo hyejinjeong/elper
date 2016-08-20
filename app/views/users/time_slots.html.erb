@@ -1,0 +1,9 @@
+<% @include_manage_slots_js = true %>
+
+<h4> 가능한 시간을 모두 선택해 주세요. </h4>
+<%= render 'time_slots/table', time_slots: @user.time_slots %>
+<%= form_tag manage_slots_user_path(@user), id: "form-manage-time-slot" do |f| %>
+	<%= hidden_field_tag :slots_data, "", id: "form-manage-time-slot-slots-data" %>
+	<%= hidden_field_tag :event_id, params[:event_id] %>
+	<%= content_tag :div, "저장하기", id: "form-manage-time-slot-button" %>
+<% end %>

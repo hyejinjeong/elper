@@ -1,6 +1,4 @@
-<% @include_manage_slots_js = true %>
-
-<div class='post'>	
+<div class='event'>	
 	<div class="title">
 		<h2>Title:
 		<%= @event.title %></h3>
@@ -13,29 +11,34 @@
 
 	<div class="period">
 		<h4>period:
-		<%= @event.period %></h4>
+		<%= @event.period %>month</h4>
 	</div>
+
+	<div>
+		<h4>mentor:
+		<%= @event.mentor.email %></h4>
+	</div>
+<!-- 
+	<div>
+		<h4>mentee:
+		<%= @event.mentee.email %></h4>
+	</div> -->
+
+	<div><h4>start_time:
+		<%= @event.start_time %></h4>
+	</div>
+
+	<div><h4>end_time:
+		<%= @event.end_time %></h4>
+	</div>
+
 </div>
 
-<div class="content">
-<table class="table table-bordered" id="myTable" border="1" width="600" height="500">
-	<tr>
-		<td width="70"></td>
-		<% TimeSlot.wdays.keys.each do |wday| %>
-			<td><%= wday %></td>
-		<% end %>
-	</tr>
-	<% (10..21).each do |hour| %>
-		<% hour_code = hour * 100 %>
-		<tr>
-			<td><%= "#{hour}시" %></td>
-			<% TimeSlot.wdays.keys.each do |wday| %>
-				<%= content_tag :td, "", class: "time-slot-button", data: { wday: wday, hour: hour, between: @time_slots.by_wday(wday).between(hour_code, hour_code + 100).present? } %>
-			<% end %>
-		</tr>
-	<% end %>
-</table>
-</div>
+<%= render 'time_slots/table', time_slots: @event.mentee.time_slots %>
+
+<% if current_user.manager %>
+	<%= link_to '시간입력', time_slots_user_path(@event.mentee, event_id: @event.id), class: 'btn btn-warning' %>
+<% end %>
 
 <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-warning' %>
 <%= link_to 'Back', events_path, class: 'btn btn-success' %>

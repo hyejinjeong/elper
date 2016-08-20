@@ -1,7 +1,7 @@
 <%= form_for @event do |f| %>
 	<div>	
 		<h2><%= f.label :title %>
-		<%= f.text_field :title %></h1>
+		<%= f.text_field :title %></h2>
 	</div>
 	<div>
 		<h4><%= f.label :start_date %>
@@ -10,6 +10,10 @@
 	<div>
 		<h4><%= f.label :period %>(month)
 		<%= f.number_field :period %></h4>
+	</div>
+
+	<div>
+		<%= f.collection_select :mentor_id, User.mentor, :id, :email %>
 	</div>
 
 	<%= f.submit %>

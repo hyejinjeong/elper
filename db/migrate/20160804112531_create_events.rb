@@ -5,8 +5,8 @@ class CreateEvents < ActiveRecord::Migration
       t.references :user, index: true, foreign_key: true, null: false
       t.date :start_date, null: false
       t.integer :period, null: false
-      t.datetime :start_time, null: false
-      t.datetime :end_time, null: false
+      t.datetime :start_time
+      t.datetime :end_time
 
       t.timestamps null: false
     end
