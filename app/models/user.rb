@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
   has_many :time_slots, dependent: :destroy
   has_many :events, dependent: :destroy
-  has_many :events, through: :participations
   # Include default devise modules. Others available are:
 
     # :confirmable, :lockable, :timeoutable and :omniauthable

@@ -19,6 +19,9 @@ class EventsController < ApplicationController
 
 	def show
 		@time_slots = @event.mentee.time_slots
+		@schedules = Schedule.where(event_id: @event.id)
+		@participation = Participation.new
+		
 	end
 
 	def manage

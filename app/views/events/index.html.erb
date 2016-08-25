@@ -9,7 +9,7 @@
 				        <h3><%= event.title%></h3></div>
 					<div class="panel-body">
 				        <p>start_date: <%= event.start_date %></p>
-				        <p>at least <%= event.period %>month</p>
+				        <p>at least <%= event.period %>weeks</p>
 				        <p>
 					        <%= link_to 'show', event_path(event), class: "btn btn-primary" %>
 					        <%= link_to 'edit', edit_event_path(event), class: "btn btn-warning" %>

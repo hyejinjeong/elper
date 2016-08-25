@@ -1,0 +1,9 @@
+<div class "row">
+	<% if @schedules.present? %>
+		<% @schedules.each do |schedule| %>
+			<%= schedule.start_datetime %>
+			<!-- <p><%= schedule.end_datetime %></p> -->
+			<p><%= render 'participations/participation_new' %></p>
+		<% end %>
+	<% end %>
+</div>

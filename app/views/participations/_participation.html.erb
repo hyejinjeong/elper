@@ -1,3 +1,14 @@
+<div class="row">
+	<% @participations.each do |participation| %>
+	     <h3><%= participation.status%></h3>
+		<%= participation.event_id%>,
+		<%= participation.user_id%>,
+		<%= participation.id %>
+ 	<% end %>
+</div>
+
+<!-- 
+#participation new
 <%= form_for @participation, url: {action: "create"} do |f| %>
 	<%= f.label :status %><br />
 	<%= f.radio_button :status, 'attendance' %>attendance
@@ -6,3 +17,4 @@
 
 	<%= f.submit %>
 <% end %>
+ -->

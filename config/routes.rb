@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :events do
-    resources :participations
-  end
+  resources :events
   resources :posts
   resources :timetable
 

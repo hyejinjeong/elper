@@ -1,7 +1,7 @@
 <div class='event'>	
 	<div class="title">
-		<h2>Title:
-		<%= @event.title %></h3>
+		<h2>Name:
+		<%= @event.title %></h2>
 	</div>
 
 	<div class="start_date">
@@ -11,26 +11,21 @@
 
 	<div class="period">
 		<h4>period:
-		<%= @event.period %>month</h4>
+		<%= @event.period %>weeks</h4>
 	</div>
 
 	<div>
 		<h4>mentor:
 		<%= @event.mentor.email %></h4>
 	</div>
-<!-- 
-	<div>
-		<h4>mentee:
-		<%= @event.mentee.email %></h4>
-	</div> -->
 
 	<div><h4>start_time:
 		<%= @event.start_time %></h4>
 	</div>
-
+<!-- 
 	<div><h4>end_time:
 		<%= @event.end_time %></h4>
-	</div>
+	</div> -->
 
 </div>
 
@@ -42,3 +37,6 @@
 
 <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-warning' %>
 <%= link_to 'Back', events_path, class: 'btn btn-success' %>
+
+<h3>멘토링 일정</h3>
+<%= render 'schedules/schedule_index' %>
