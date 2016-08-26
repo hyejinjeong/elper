@@ -5,8 +5,7 @@ class Event < ActiveRecord::Base
 	belongs_to :mentee, class_name: "User"
 	belongs_to :mentor, class_name: "User"
 
-	scope :upcoming, -> (start_datetime) { where( 'Time.now < ?', start_datetime) }
-
+	
 	before_validation do
 		unless mentee
 			self.mentee = User.create!(
@@ -19,9 +18,9 @@ class Event < ActiveRecord::Base
 	end
 
 	before_save do
-		schedules = Schedule.where(event: self)
-		# schedules.upcoming(schedules.start_datetime).destroy_all
-		Schedule.auto_create_by_event(self)
+		if self.start_time.present?
+			Schedule.auto_create_by_event(self)
+		end
 	end
 
 	def select_time_between

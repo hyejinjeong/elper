@@ -13,7 +13,8 @@
 	</div>
 
 	<div>
-		<%= f.collection_select :mentor_id, User.mentor, :id, :email %>
+		<h4><%= f.label :mentor %>
+		<%= f.collection_select :mentor_id, User.mentor, :id, :email %></h4>
 	</div>
 
 	<%= f.submit %>

@@ -1,5 +1,12 @@
+<!-- <script type="text/javascript">
+function button_click(){
+
+}
+</script>
+ -->
 <div class "row">
 	<% if @schedules.present? %>
+		<h2>멘토링 일정</h2>
 		<% @schedules.each do |schedule| %>
 			<%= schedule.start_datetime %>
 			<!-- <p><%= schedule.end_datetime %></p> -->

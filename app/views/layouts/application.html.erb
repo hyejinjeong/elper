@@ -63,12 +63,12 @@
 	 </div>
 
 	 <div class="container">
-<%= render partial: "shared/flash_messages", flash: flash %>
+		<%= render partial: "shared/flash_messages", flash: flash %>
 		<%= yield %>
 
 	 </div> <!-- /container -->
 </body>
 
 <%= javascript_include_tag 'time_slots/manage_slots' if @include_manage_slots_js %>
-
+<%= javascript_include_tag 'schedules' if @include_schedules_js %>
 </html>
